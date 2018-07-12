@@ -1,18 +1,17 @@
 # UCSM Docker Image
 
-This docker image is provides contains all required packages to run UCS Manager Ansible playbooks aginst remote nodes.
+This docker image is provides contains all required packages to run UCS Manager Ansible playbooks against remote nodes.
+The container was originally created to overcome managing dependencies within environments without internet access.
 
-The container was originally created to overcome managing dependancies within environments without internet access.
+####Using the container
 
-#### Using the container
-
-The container entrypoint is the ansible-playbook command, allowing additional Ansible arguements to be pased at run time. 
+The container entrypoint is the ansible-playbook command, allowing additional Ansible arguments to be passed at run time.
 
 I have not found a need to persist the container after running a playbook, as such I always run it with the --rm flag.
 
 If you're using paths within ansible.cfg for settings such as library, remember that the path is local within the context of the running container.
-
 On run the below command on a docker host
+
 
 ```docker pull sdbrett\ucsm-ansible ```
 
