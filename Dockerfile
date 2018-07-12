@@ -18,8 +18,6 @@ ENV BUILD_PACKAGES \
   py-yaml \
   ca-certificates
 
-#COPY src/ucsm_apis /tmp/ucsm_apis
-
 RUN set -x && \
     \
     echo "==> Adding build-dependencies..."  && \
