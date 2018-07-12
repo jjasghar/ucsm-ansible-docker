@@ -18,7 +18,7 @@ ENV BUILD_PACKAGES \
   py-yaml \
   ca-certificates
 
-COPY src/ucsm_apis /tmp/ucsm_apis
+#COPY src/ucsm_apis /tmp/ucsm_apis
 
 RUN set -x && \
     \
@@ -42,6 +42,7 @@ RUN set -x && \
     pip install --no-cache ucsmsdk==${UCSMSDK_VERSION}&& \
     \
     echo "==> Installing ucsm_apis" && \
+    git clone https://github.com/CiscoUcs/ucsm_apis.git /tmp/ucsm_apis && \
     cd /tmp/ucsm_apis && \
     python ./setup.py install && \
     rm -rf /tmp/ucsm_apis && \
